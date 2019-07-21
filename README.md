@@ -1,12 +1,8 @@
-# Project Name
-
-Simple Todo List
-
-## Installation
+# Todo List
 
 Project intended to run with PHP7.2, MySQL, Nginx.
 
-## Usage
+## Setup
 
 Apply mysql dump file dump.sql
 Create database user with "INSERT", "UPDATE", "SELECT", "DELETE" permissions.
