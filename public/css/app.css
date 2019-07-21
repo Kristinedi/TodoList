@@ -1,0 +1,62 @@
+body {
+    font-family: 'Literata', serif;
+    color: rgb(39, 2, 77);
+    background: #C6FFDD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h2 {
+    font-weight: 700;
+    margin-top: 2%;
+}
+
+.container {
+    margin-top: 4%;
+}
+
+.btn {
+    background: white;
+}
+
+.btn-toolbar {
+    width: 50%;
+}
+
+.btn-toolbar .btn {
+    width: 40%;
+}
+
+p, #add {
+    margin-top: 2%;
+}
+
+.todo-item {
+    background-color: #ededeb;
+    margin-bottom: 2%;
+    min-height: 96px;
+}
+
+.custom-control-label::before, 
+.custom-control-label::after {
+    top: .45rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.edit-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.date-info {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.btn {
+    padding-top: 0.2%;
+    padding-bottom: 0.2%;
+}
