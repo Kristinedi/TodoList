@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\TodoItemModel;
-use App\Models\Database;
 
 class TodoController {
     private $views_folder = __DIR__ . '/../../views/';
@@ -38,7 +37,6 @@ class TodoController {
     public function store($data) {
         $model = new TodoItemModel($data["title"], $data["text"]);
         $model->save();
-
         return $this->redirect('/');
     }
 

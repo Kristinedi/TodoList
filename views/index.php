@@ -4,7 +4,7 @@
         <!-- Makes card for each record -->
         <?php foreach($models as $model) { ?>
             <div class="border border-secondary row todo-item pt-1">
-                <div class="col-sm-9">
+                <div class="col-9">
                     <form method ="post" action ="/" id="check-form-<?php echo $model->getId(); ?>">
                         <input type="hidden" name="action" value="check"> 
                         <input type="hidden" name="id" value="<?php echo $model->getId(); ?>">
@@ -15,7 +15,7 @@
                     </form>
                     <p><?php echo $model->getText(); ?></p>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-3">
                     <p class="date-info"><?php
                         // Changes date format from string to timestamp
                         $today = strtotime("today");

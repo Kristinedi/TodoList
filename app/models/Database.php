@@ -27,7 +27,7 @@ class Database {
     }
 
     // Executes a MySQL query and returns results
-    public function query($query, $params = []) {
+    public function query($query, $params = array()) {
         $statement = $this->connection->prepare($query);
  
         if (count($params) > 0) {

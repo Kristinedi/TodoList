@@ -54,9 +54,11 @@ class TodoItemModel {
     public static function findById($id) {
         $database = new Database();
         $query = "SELECT * FROM todo_list_items WHERE `id` = ?";
-        $results = $database->query($query, [$id]);
+        $params = array($id);
+        $results = $database->query($query, $params);
         if (count($results) == 1) {
             $result = $results[0];
+
             $model = new self;
             $model->id = $result['id'];
             $model->title = $result['title'];
@@ -73,10 +75,12 @@ class TodoItemModel {
         $database = new Database();
         if ($this->id) {
             $query = "UPDATE todo_list_items SET `title` = ?, `text` = ?, `is_checked` = ? WHERE `id` = ?";
-            $results = $database->query($query, [$this->title, $this->text, $this->is_checked, $this->id]);
+            $params = array($this->title, $this->text, $this->is_checked, $this->id);
+            $results = $database->query($query, $params);
         } else {
             $query = "INSERT INTO todo_list_items (`title`, `text`) VALUES (?, ?)";
-            $results = $database->query($query, [$this->title, $this->text]);
+            $params = array($this->title, $this->text);
+            $results = $database->query($query, $params);
         }
         return $results;
     }
@@ -85,7 +89,8 @@ class TodoItemModel {
     public function delete() {
         $database = new Database();
         $query = "DELETE FROM todo_list_items WHERE `id` = ?";
-        $results = $database->query($query, [$this->id]);
+        $params = array($this->id);
+        $results = $database->query($query, $params);
     }
 
     // Finds all records in database
@@ -93,7 +98,7 @@ class TodoItemModel {
         $database = new Database();
         $query = "SELECT * FROM todo_list_items ORDER BY `id` DESC";
         $results = $database->query($query);
-        $models = [];
+        $models = array();
         if (count($results) >= 1) {
             foreach ($results as $result) {
                 $model = new self;
