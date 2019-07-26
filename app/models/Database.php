@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\TodoItemModel;
-
 class Database {
     protected $connection;
 
